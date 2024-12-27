@@ -36,5 +36,6 @@ app.post('/events', (req, res) => {
 })
 
 app.listen(port, () => {
+    console.log("version 55")
     console.log(`Server is running on http://localhost:${port}`);
 });
