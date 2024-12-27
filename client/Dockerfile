@@ -1,18 +1,12 @@
-# Use an official Node.js runtime as a parent image
 FROM node:alpine
-
-# Set the working directory
+ 
+# Add the following lines
+ENV CI=true
+ENV WDS_SOCKET_PORT=0
+ 
 WORKDIR /app
-
-# Copy package.json and package-lock.json
 COPY package.json ./
-
-# Install dependencies
 RUN npm install
-
-# Copy the rest of the application code
 COPY ./ ./
-
-
-# Start the application
+ 
 CMD ["npm", "start"]
